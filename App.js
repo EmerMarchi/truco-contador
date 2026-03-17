@@ -4,31 +4,58 @@ import { Button } from 'react-native-web';
 
 export default function App() {
   
-  const[contador, setContador] = useState(0)
+  const[nos, setNos] = useState(0)
+  const[eles, setEles] = useState(0)
 
-  function aumentar(){
-    setContador(contador + 1)
+  function aumentarNos(){
+    setNos(nos + 1)
   }
 
-  function diminuir(){
-    setContador(contador - 1)
+  function diminuirNos(){
+    setNos(nos - 1)
+  }
+
+  function diminuirEles(){
+    setEles(eles - 1)
+  }
+
+  function aumentarEles(){
+    setEles(eles + 1)
   }
 
   return (
     <View style={styles.container}>
       <Image source={require('./assets/logo.png')} />
-      <Text style={styles.marcador}>MARCADOR</Text>
-      <Text style={styles.numero}>{contador}</Text>
+
+    
+      <Text style={styles.marcador}>NÓS</Text>
+      <Text style={styles.numero}>{nos}</Text>
 
     <View style={styles.buttonsContainer}>
         <View style={styles.buttons}>
-          <Button color='green' onPress={aumentar} title='+' />
+          <Button color='green' onPress={aumentarNos} title='+' />
         </View>
         <View style={styles.buttons}>
-          <Button color='red' onPress={diminuir} title='-' />
+          <Button color='red' onPress={diminuirNos} title='-' />
         </View>
-      </View>
-      
+        
+        
+    </View>
+
+      <Text style={styles.marcador}>ELES</Text>
+      <Text style={styles.numero}>{eles}</Text>
+
+    <View style={styles.buttonsContainer}>
+        <View style={styles.buttons}>
+          <Button color='green' onPress={aumentarEles} title='+' />
+        </View>
+        <View style={styles.buttons}>
+          <Button color='red' onPress={diminuirEles} title='-' />
+        </View>
+        <View>
+
+    </View>
+    </View>
     </View>
   );
 }
