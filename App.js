@@ -23,6 +23,7 @@ export default function App() {
     setEles(eles + 1)
   }
 
+
   return (
     <View style={styles.container}>
       <Image source={require('./assets/logo.png')} />
@@ -38,6 +39,12 @@ export default function App() {
         <View style={styles.buttons}>
           <Button color='red' onPress={diminuirNos} title='-' />
         </View>
+
+         <Button onPress={() => setNos(nos+3)} color='#03b48e'  title='TRUCO' />
+    <Button onPress={() => setNos(nos+6)} color='#071fac'  title='SEIS' />
+    <Button onPress={() => setNos(nos+9)} color='#8c15db'  title='NOVE' />
+    <Button onPress={() => setNos(nos+12)} color='#6d1d1d'  title='DOZE' />
+    
         
         
     </View>
@@ -56,6 +63,13 @@ export default function App() {
 
     </View>
     </View>
+     <View>
+          <Button onPress={() => setEles(eles+3)} color='#03b48e'  title='TRUCO' />
+          <Button onPress={() => setEles(eles+6)} color='#071fac'  title='SEIS' />
+          <Button onPress={() => setEles(eles+9)} color='#8c15db'  title='NOVE' />
+          <Button onPress={() => setEles(eles+12)} color='#6d1d1d'  title='DOZE' />
+        </View>
+
     </View>
   );
 }
@@ -69,7 +83,7 @@ const styles = StyleSheet.create({
   },
   buttonsContainer:{
     flexDirection: 'row',
-    gap:40
+    gap:40,
   },
   marcador:{
     fontSize:30,
@@ -83,6 +97,6 @@ const styles = StyleSheet.create({
   buttons:{
     width:60,
     height:40,
-  },
-  
+    marginBottom:50,
+  }
 });
